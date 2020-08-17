@@ -15,13 +15,26 @@
             <div class="col-sm-10">
                 <input type="text" name="author" placeholder="Enter author name" class="form-control">
             </div>            
-        </div>
+        </div>        
         <div class="form-group">
             <label class="control-label col-sm-2">Upload Book Image :</label>
             <div class="col-sm-10">
                 <input type="file" name="book_image[]" title="upload book photo" multiple="multiple" class="form-control">
             </div>
-        </div>                        
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Price per book :</label>
+            <div class="col-sm-10">
+                <input type="number" name="book_price" class="form-control">
+            </div>            
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Enter Book Quntity :</label>
+            <div class="col-sm-10">
+                <input type="number" name="book_quantity" class="form-control">
+            </div>            
+        </div>                               
+        
         {{-- <input type="text" name="standard" placeholder="Enter acadamic standard"><br><br> --}}
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

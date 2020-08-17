@@ -49,7 +49,7 @@
                     <li><a href="#">FeedBack</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+                    <li><a href="/login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
                     <li><a href="/register"><span class="glyphicon glyphicon-user"></span>Register</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span>Your Account</a></li>
                     <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>

@@ -6,15 +6,16 @@
 <div class="container">
     <h1>Registration Form</h1>
     <form action="register" method="post">
+        @csrf
         <div class="form-group">
             <label for="">
-                Enter the name : 
+                Enter Your/Shop name : 
             </label>
             <input type="text" class="form-control" name="username">
         </div>
         <div class="form-group">
             <label for="">
-                Enter the address : 
+                Enter Your/shop address : 
             </label>
             <textarea name="address" id="" cols="30" rows="10" class="form-control"></textarea>
         </div>

@@ -29,6 +29,10 @@ Route::post('filter','Book@filter');
 
 //user
 Route::view('cart','user.cart');
+Route::view('/login', 'user.login');
+Route::post('/login','UserRegister@login');
 
 //For Admin
 Route::view('addtype','admin.addbooktype');
+Route::post('addCategory','admin\AddCategory@addCategory');
+Route::view('addCategory','admin.addBookCategory');
