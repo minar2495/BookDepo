@@ -31,8 +31,13 @@ Route::post('filter','Book@filter');
 Route::view('cart','user.cart');
 Route::view('/login', 'user.login');
 Route::post('/login','UserRegister@login');
+Route::get('/logout','UserRegister@logout');
 
 //For Admin
 Route::view('addtype','admin.addbooktype');
 Route::post('addCategory','admin\AddCategory@addCategory');
 Route::view('addCategory','admin.addBookCategory');
+
+Route::group(['middleware' => 'authentication'], function () {
+    
+});

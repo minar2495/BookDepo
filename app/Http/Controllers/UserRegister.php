@@ -29,11 +29,20 @@ class UserRegister extends Controller
         ->where('email',$req->username)
         ->where('password',$req->password)
         ->get();
+        $username = "";
         if($result){
-            //set session
+            foreach($result as $data){
+                $username = $data->name;
+            }        
+            $req->session()->put('data',$username);
+            return redirect('/');
         }else{
-
+            return redirect('/login');
         }
+    }
+    public function logout(Request $req){
+        $req->session()->forget('data');
+        return redirect('/login');
     }
     public function checkUnique($email_id){
         $result = DB::table('registered_user')

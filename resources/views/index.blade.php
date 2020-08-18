@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<h1>{{session('data')}}</h1>
     <div class="container">
         <div class="row">
             <div class="col-sm-3">

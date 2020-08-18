@@ -48,8 +48,12 @@
                     <li><a href="#">About</a></li>
                     <li><a href="#">FeedBack</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+                <ul class="nav navbar-nav navbar-right">                    
+                    {{-- @if (!session()->has('data')) --}}
+                        <li><a href="/login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+                    {{-- @else --}}
+                        {{-- <li><a href="/logout"><span class="glyphicon glyphicon-user"></span>Logout</a></li> --}}
+                    {{-- @endif                     --}}
                     <li><a href="/register"><span class="glyphicon glyphicon-user"></span>Register</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span>Your Account</a></li>
                     <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
