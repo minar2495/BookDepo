@@ -1,10 +1,16 @@
 @extends('layout')
 @section('content')
-<h1>{{session('data')}}</h1>
     <div class="container">
+        @if (session('success'))
+        <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success!</strong> {{session('success')}}
+        </div>                 
+        @endif
+       
         <div class="row">
             <div class="col-sm-3">
-                <div class="panel panel-primary" onclick="alert();">
+                <div class="panel panel-primary" onclick="">
                     <div class="panel-heading">
                         <strong>Action and Adventure</strong>                                                
                     </div>

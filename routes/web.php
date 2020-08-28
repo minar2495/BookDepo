@@ -31,7 +31,10 @@ Route::post('filter','Book@filter');
 Route::view('cart','user.cart');
 Route::view('/login', 'user.login');
 Route::post('/login','UserRegister@login');
-Route::get('/logout','UserRegister@logout');
+Route::get('/logout',function(){
+    session()->forget('data');
+    return redirect('/');
+});
 
 //For Admin
 Route::view('addtype','admin.addbooktype');
