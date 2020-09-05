@@ -32,10 +32,19 @@ class Book extends Controller
     }
     public function filter(Request $req)
     {
-        $list = DB::table('books')
-                ->where('book_name','like','%'.$req->search.'%')
+        if($req->categoryId)
+        {
+            $list = DB::table('books')
+                ->where('book_category_id',$req->categoryId)                
+                ->paginate(10); 
+        }
+        else
+        {
+            $list = DB::table('books')
+                ->where('category_id','like','%'.$req->search.'%')
                 ->orwhere('author','like','%'.$req->search.'%')
                 ->paginate(10);
+        }                
         return view('book.list',["list"=>$list]);
     }
     

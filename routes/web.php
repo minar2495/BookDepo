@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index');
 // Route::view('list','book.list');
 Route::view('register','user.register');
 

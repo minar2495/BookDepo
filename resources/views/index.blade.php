@@ -7,92 +7,26 @@
             <strong>Success!</strong> {{session('success')}}
         </div>                 
         @endif
-       
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="panel panel-primary" onclick="">
-                    <div class="panel-heading">
-                        <strong>Action and Adventure</strong>                                                
+        <form action="filter" method="post">
+        @csrf
+            <div class="row">
+                @foreach ($list as $data)                
+                    <div class="col-sm-3">
+                        <div class="panel panel-primary" onclick="">
+                            <div class="panel-heading">
+                                <strong>{{$data->category_name}}</strong>                                                
+                            </div>
+                            <div class="panel-body">
+                                <img src="https://placehold.it/150x80?text=IMAGE" alt="Book Image" class="img-responsive" style="width:100%">
+                            </div>
+                            <div class="panel-footer">
+                                <input type="hidden" name="categoryId" value="{{$data->category_id}}">
+                                <button type="submit" class="btn btn-info btn-block">See List</button>
+                            </div>                    
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        <img src="https://placehold.it/150x80?text=IMAGE" alt="Book Image" class="img-responsive" style="width:100%">
-                    </div>                    
-                </div>
+                @endforeach            
             </div>
-            <div class="col-sm-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        Classics                        
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://placehold.it/150x80?text=IMAGE" alt="Image" class="img-responsive" style="width:100%">
-                    </div>                    
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        Comic Book or Graphic Novel                       
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://placehold.it/150x80?text=IMAGE" alt="Image" class="img-responsive" style="width:100%">
-                    </div>                
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        Detective and Mystery                        
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://placehold.it/150x80?text=IMAGE" alt="Image" class="img-responsive" style="width:100%">
-                    </div>                
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        Fantasy                        
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://placehold.it/150x80?text=IMAGE" alt="Image" class="img-responsive" style="width:100%">
-                    </div>                
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        BLACK FRIDAY DEAL                        
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://placehold.it/150x80?text=IMAGE" alt="Image" class="img-responsive" style="width:100%">
-                    </div>                
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        BLACK FRIDAY DEAL                        
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://placehold.it/150x80?text=IMAGE" alt="Image" class="img-responsive" style="width:100%">
-                    </div>                
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        BLACK FRIDAY DEAL                        
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://placehold.it/150x80?text=IMAGE" alt="Image" class="img-responsive" style="width:100%">
-                    </div>                
-                </div>
-            </div>
-        </div>
-    </div>
+        </form>               
+    </div>    
 @endsection
